@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Demo</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    img {
+      width: 100%;
+    }
+
+    #jumbotext {
+      font-family: 'Bungee', cursive;
+      font-size: 50px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron col-md-12 text-center">
+        <h1 id="jumbotext">Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2><b>Latest Mars News</b></h2>
+        <h3>{{mars_info.News_Title}}</h3>
+        <p>{{mars_info.Paragraph_Text}}</p>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-md-8">
+        <h2><b>Featured Mars Image</b></h2>
+        <img src="{{mars_info.Most_Recent_Mars_Image}}">
+      </div>
+
+      <div class="col-md-4 border border-dark pb-4">
+        <div class="weather_box">
+          <h3><b>Current Weather on Mars</b></h3>
+          <p>{{mars_info.Mars_Weather}}</p>
+        </div>
+
+        <div class="facts_box">
+          <h3><b>Mars Facts</b></h3>
+          <table border="1" class="dataframe">
+            <tbody>
+              <tr>
+                <td><b>Equatorial Diameter:</b></td>
+                <td>6,792 km</td>
+              </tr>
+              <tr>
+                <td><b>Polar Diameter:</b></td>
+                <td>6,752 km</td>
+              </tr>
+              <tr>
+                <td><b>Mass:</b></td>
+                <td>6.42 x 10^23 kg (10.7% Earth)</td>
+              </tr>
+              <tr>
+                <td><b>Moons:</b></td>
+                <td>2 (Phobos &amp; Deimos)</td>
+              </tr>
+              <tr>
+                <td><b>Orbit Distance:</b></td>
+                <td>227,943,824 km (1.52 AU)</td>
+              </tr>
+              <tr>
+                <td><b>Orbit Period:</b></td>
+                <td>687 days (1.9 years)</td>
+              </tr>
+              <tr>
+                <td><b>Surface Temperature:</b></td>
+                <td>-153 to 20 °C</td>
+              </tr>
+              <tr>
+                <td><b>First Record:</b></td>
+                <td>2nd millennium BC</td>
+              </tr>
+              <tr>
+                <td><b>Recorded By:</b></td>
+                <td>Egyptian astronomers</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-5 mb-5">
+      <div class="row">
+        <h2><b>Mars Hemispheres</b></h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="{{mars_info.Hemispheres[0].img_url}}">
+              <div class="card-body">
+                <p class="card-text"><b>{{mars_info.Hemispheres[0].title}}</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="{{mars_info.Hemispheres[1].img_url}}">
+              <div class="card-body">
+                <p class="card-text"><b>{{mars_info.Hemispheres[1].title}}</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="{{mars_info.Hemispheres[2].img_url}}">
+              <div class="card-body">
+                <p class="card-text"><b>{{mars_info.Hemispheres[2].title}}</b></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="{{mars_info.Hemispheres[3].img_url}}">
+              <div class="card-body">
+                <p class="card-text"><b>{{mars_info.Hemispheres[3].title}}</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
